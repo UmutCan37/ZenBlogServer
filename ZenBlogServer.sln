@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35818.85 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{165D9CBD-601A-4493-B56B-D47E14AC8588}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{73933D9D-7E72-4E8C-8429-4038DB6EBA11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZenBlog.Domain", "Core\ZenBlog.Domain\ZenBlog.Domain.csproj", "{533B1633-DA16-4F75-B2F1-D842ACBEF1A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZenBlog.Application", "Core\ZenBlog.Application\ZenBlog.Application.csproj", "{B82835F8-ABAF-4174-9B55-FF90C0D78B45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZenBlog.Persistence", "Infrastructure\ZenBlog.Persistence\ZenBlog.Persistence.csproj", "{447879A6-3488-48A0-BE1F-49AF8D6AB84E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZenBlog.Infrastructure", "Infrastructure\ZenBlog.Infrastructure\ZenBlog.Infrastructure.csproj", "{B2FADB4E-D8F5-45FA-BA15-1C3E1BB51621}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZenBlog.API", "Presentation\ZenBlog.API\ZenBlog.API.csproj", "{91676978-A13E-4821-8C86-FFD441AAFB5A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{533B1633-DA16-4F75-B2F1-D842ACBEF1A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{533B1633-DA16-4F75-B2F1-D842ACBEF1A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{533B1633-DA16-4F75-B2F1-D842ACBEF1A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{533B1633-DA16-4F75-B2F1-D842ACBEF1A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B82835F8-ABAF-4174-9B55-FF90C0D78B45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B82835F8-ABAF-4174-9B55-FF90C0D78B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B82835F8-ABAF-4174-9B55-FF90C0D78B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B82835F8-ABAF-4174-9B55-FF90C0D78B45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{447879A6-3488-48A0-BE1F-49AF8D6AB84E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{447879A6-3488-48A0-BE1F-49AF8D6AB84E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{447879A6-3488-48A0-BE1F-49AF8D6AB84E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{447879A6-3488-48A0-BE1F-49AF8D6AB84E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2FADB4E-D8F5-45FA-BA15-1C3E1BB51621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2FADB4E-D8F5-45FA-BA15-1C3E1BB51621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2FADB4E-D8F5-45FA-BA15-1C3E1BB51621}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2FADB4E-D8F5-45FA-BA15-1C3E1BB51621}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91676978-A13E-4821-8C86-FFD441AAFB5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91676978-A13E-4821-8C86-FFD441AAFB5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91676978-A13E-4821-8C86-FFD441AAFB5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91676978-A13E-4821-8C86-FFD441AAFB5A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{533B1633-DA16-4F75-B2F1-D842ACBEF1A0} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{B82835F8-ABAF-4174-9B55-FF90C0D78B45} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{447879A6-3488-48A0-BE1F-49AF8D6AB84E} = {165D9CBD-601A-4493-B56B-D47E14AC8588}
+		{B2FADB4E-D8F5-45FA-BA15-1C3E1BB51621} = {165D9CBD-601A-4493-B56B-D47E14AC8588}
+		{91676978-A13E-4821-8C86-FFD441AAFB5A} = {73933D9D-7E72-4E8C-8429-4038DB6EBA11}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F43EA20-FBCD-428A-94A5-ED051CEE5575}
+	EndGlobalSection
+EndGlobal
