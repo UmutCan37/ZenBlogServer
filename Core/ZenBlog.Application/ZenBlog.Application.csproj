@@ -21,4 +21,39 @@
     <PackageReference Include="MediatR" Version="14.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Comments\Commands\" />
+    <Folder Include="Features\Comments\Handlers\" />
+    <Folder Include="Features\Comments\Mappings\" />
+    <Folder Include="Features\Comments\Validators\" />
+    <Folder Include="Features\Comments\Results\" />
+    <Folder Include="Features\Comments\Queries\" />
+    <Folder Include="Features\ContactInfos\Commands\" />
+    <Folder Include="Features\ContactInfos\Handlers\" />
+    <Folder Include="Features\ContactInfos\Mappings\" />
+    <Folder Include="Features\ContactInfos\Validators\" />
+    <Folder Include="Features\ContactInfos\Results\" />
+    <Folder Include="Features\ContactInfos\Queries\" />
+    <Folder Include="Features\Messages\Commands\" />
+    <Folder Include="Features\Messages\Handlers\" />
+    <Folder Include="Features\Messages\Mappings\" />
+    <Folder Include="Features\Messages\Validators\" />
+    <Folder Include="Features\Messages\Results\" />
+    <Folder Include="Features\Messages\Queries\" />
+    <Folder Include="Features\Socials\Commands\" />
+    <Folder Include="Features\Socials\Handler\" />
+    <Folder Include="Features\Socials\Mappings\" />
+    <Folder Include="Features\Socials\Validators\" />
+    <Folder Include="Features\Socials\Queries\" />
+    <Folder Include="Features\Socials\Results\" />
+    <Folder Include="Features\SubComments\Commands\" />
+    <Folder Include="Features\SubComments\Handlers\" />
+    <Folder Include="Features\SubComments\Mappings\" />
+    <Folder Include="Features\SubComments\Validators\" />
+    <Folder Include="Features\SubComments\Queries\" />
+    <Folder Include="Features\SubComments\Results\" />
+    <Folder Include="Features\Users\Queries\" />
+    <Folder Include="Features\Users\Results\" />
+  </ItemGroup>
+
 </Project>
