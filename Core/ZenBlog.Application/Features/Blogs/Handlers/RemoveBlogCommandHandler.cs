@@ -1,12 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MediatR;
+using ZenBlog.Application.Base;
+using ZenBlog.Application.Contracts.Persistence;
+using ZenBlog.Application.Features.Blogs.Commands;
+using ZenBlog.Domain.Entities;
 
 namespace ZenBlog.Application.Features.Blogs.Handlers
 {
-    class RemoveBlogCommandHandler
+    public class RemoveBlogCommandHandler(IRepository<Blog> _repository, IUnitOfWork _unitOfWork) : IRequestHandler<RemoveBlogCommand, BaseResult<object>>
     {
+        public async Task<BaseResult<object>> Handle(RemoveBlogCommand request, CancellationToken cancellationToken)
+        {
+
+            var blog = await _repository.GetByIdAsync(request.id);
+            if (blog == null)
+            {
+                return BaseResult<object>.NotFound("Blog not found");
+
+            }
+            _repository.Delete(blog);
+            await _unitOfWork.SaveChangesAsync();
+            return BaseResult<object>.Success("Blog removed successfully");
+
+        }
     }
 }
