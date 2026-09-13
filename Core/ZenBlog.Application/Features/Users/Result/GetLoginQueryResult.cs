@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZenBlog.Application.Features.Users.Result
 {
-    public class GetLoginResponse
+    public class GetLoginQueryResult
     {
         public string Token { get; set; }
         public DateTime ExpirationTime { get; set; }

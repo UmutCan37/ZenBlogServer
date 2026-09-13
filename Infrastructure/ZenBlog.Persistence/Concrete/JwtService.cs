@@ -15,7 +15,7 @@ namespace ZenBlog.Persistence.Concrete
     public class JwtService(UserManager<AppUser> _userManager, IOptions<JwtTokenOptions> tokenOptions) : IJwtService
     {
         private readonly JwtTokenOptions _jwtTokenOptions = tokenOptions.Value;
-        public async Task<GetLoginResponse> GenerateTokenAsync(GetUsersQueryResult result)
+        public async Task<GetLoginQueryResult> GenerateTokenAsync(GetUsersQueryResult result)
         {
             var user = await _userManager.FindByNameAsync(result.UserName);
             SymmetricSecurityKey symmetricSecurityKey = new(Encoding.UTF8.GetBytes(_jwtTokenOptions.Key));
@@ -40,7 +40,7 @@ namespace ZenBlog.Persistence.Concrete
                 signingCredentials: new(symmetricSecurityKey, SecurityAlgorithms.HmacSha256)
             );
 
-            GetLoginResponse response = new();
+            GetLoginQueryResult response = new();
 
             response.Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
             response.ExpirationTime = dateTimeNow.AddMinutes(_jwtTokenOptions.ExpireInMinutes);

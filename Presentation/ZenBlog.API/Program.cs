@@ -7,7 +7,7 @@ using ZenBlog.Persistence.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddApplicationServices();
+builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -23,10 +23,12 @@ if (app.Environment.IsDevelopment())
 }
 app.UseMiddleware<CustomExceptionHandlingMiddleware>();
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-app.MapGroup("/api").RegisterEndpoints();
+app.MapGroup("/api")
+    .RequireAuthorization()
+    .RegisterEndpoints();
 
 app.Run();

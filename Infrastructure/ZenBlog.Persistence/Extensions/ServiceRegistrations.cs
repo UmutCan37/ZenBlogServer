@@ -1,8 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using ZenBlog.Application.Contracts.Persistence;
+using ZenBlog.Application.Options;
 using ZenBlog.Domain.Entities;
 using ZenBlog.Persistence.Concrete;
 using ZenBlog.Persistence.Context;
@@ -31,9 +35,28 @@ namespace ZenBlog.Persistence.Extensions
 
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 
+            services.AddScoped<IJwtService, JwtService>();
 
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+            {
+                var jwtTokenOptions = configuration.GetSection(nameof(JwtTokenOptions)).Get<JwtTokenOptions>();
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = jwtTokenOptions.Issuer,
+                    ValidAudience = jwtTokenOptions.Audience,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtTokenOptions.Key)),
+                    ClockSkew = TimeSpan.Zero
+                };
+            });
 
-            
         }
     }
 }

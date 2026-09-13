@@ -24,6 +24,11 @@ namespace ZenBlog.Persistence.Concrete
             return await _table.AsNoTracking().ToListAsync();
         }
 
+        public Task<List<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<TEntity> GetByIdAsync(Guid id)
         {
             return await _table.FindAsync(id);
