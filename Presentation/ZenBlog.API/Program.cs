@@ -41,7 +41,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 app.MapGroup("/api")
-    .RequireAuthorization()
+    //.RequireAuthorization()
     .RegisterEndpoints();
 
 app.Run();

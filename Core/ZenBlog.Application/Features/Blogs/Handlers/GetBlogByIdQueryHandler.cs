@@ -17,7 +17,7 @@ namespace ZenBlog.Application.Features.Blogs.Handlers
     {
         public async Task<BaseResult<GetBlogByIdQueryResult>> Handle(GetBlogByIdQuery request, CancellationToken cancellationToken)
         {
-            var value = repository.GetByIdAsync(request.Id);
+            var value =await repository.GetByIdAsync(request.Id);
             if (value is null)
             {
                 return BaseResult<GetBlogByIdQueryResult>.Fail("Blog not found");

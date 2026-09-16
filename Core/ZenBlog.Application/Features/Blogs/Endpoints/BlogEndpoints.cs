@@ -43,7 +43,7 @@ namespace ZenBlog.Application.Features.Blogs.Endpoints
                 return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
             });
 
-            blogs.MapGet("{categoryId}", async (Guid CategoryId, IMediator _mediator) =>
+            blogs.MapGet("/category/{categoryId}", async (Guid CategoryId, IMediator _mediator) =>
             {
                 var response = await _mediator.Send(new GetBlogsByCategoryIdQuery(CategoryId));
                 return response.IsSuccess ? Results.Ok(response) : Results.BadRequest(response);
